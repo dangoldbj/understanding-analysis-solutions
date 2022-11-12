@@ -1,0 +1,301 @@
+\section{Some Preliminaries}
+
+\begin{solution}
+  \enum{
+  \item
+    Suppose for contradiction that $p/q$ is in lowest terms such that $(p/q)^2=3$.
+     Then $p^2 = 3q^2$ implying that $p^2$ is a multiple of $3$. Since $3$ is not a perfect square,
+     this implies that $p$ is a multiple of $3$. Therefore $p=3r$ for some $r$, substituting $p$ we get,
+     $(3r)^2=3q^2$ and $3r^2=q^2$ implying that $q$ is also a multiple of $3$ contradicting the assumption \\
+     that $p/q$ is already at its lowest terms.
+
+     The similar argument works for $\sqrt{6}$.
+
+  \item
+    $\sqrt{4}$ is a perfect square.
+    This is where the proof for Theorem 1.1.1 breaks down.
+  }
+\end{solution}
+
+\begin{solution}
+  If $r=0$ then $2^{r} = 1 \neq 3$. If $r \neq 0$ then set $p/q = r$ to get $2^{p} = 3^{q}$ which is not possible since
+  $2$ and $3$ share no factors.
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item
+    It does not hold for $A_{n}=\{m \mid m \geq n: \forall n \in \mathbb{N}\}$
+
+  \item
+    It does not hold for $A_{n}=\{m \mid n \leq m \leq n + 100 \forall n \in \mathbb{R}\}$.
+
+    \textbf{Update:}
+    The initial reasoning is wrong because in that $A_{n} \nsupseteq A_{m} for n \leq m$.
+    It is true because, eventually there must exist $A_{m}$ for some $m$ and the pattern continues
+    $A_{1},\ldots,A_{m-1}, A_{m}, A_{m}, A_{m}, \ldots, A_{m}$.
+  
+  \item
+    $x \in A \cap (B  \cup  C)$ means $x \in A$ and $x \in B$ or $x \in C$.
+    If $x \in C$ then $x \in (A \cap B) \cup C$.
+    If $x \in B$ then $x \in A \cap B$, which implies $x \in (A \cap B) \cup C$.
+    This shows that $(A \cap B) \cup C \subseteq A \cap (B \cup C)$.
+
+    Again,
+    $x \in (A \cap B) \cup C$ means $x \in$ A and $x \in B$ or $x \in C$.
+
+    If $x \in C$ then, $x \in (A \cap B) \cup C$.
+    If $x \in A$ and $x \in B$ then, $x \in A \cap (B \cup C)$.
+    This shows that $A \cap (B \cup C) \subseteq (A \cap B) \cup C$.
+
+    Thus, $A \cap (B \cup C) = (A \cap B) \cup C$. 
+
+  \item
+    Similar as above
+
+  \item
+    $x \in A \cap (B \cup C)$ means $x \in A$ and $x \in B$ or $x \in C$.
+    This means $x \in A \cap B$ or $x \in A \cap C$.
+    So, $(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)$
+
+    $x \in (A \cap B) \cup (A \cap C)$ means $x \in A \cap B$ or $x \in A \cap C$.
+    This means, $x \in A$ and $x \in B$ or $x \in C$.
+    So, $A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)$.
+
+    Hence, $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+  }
+\end{solution}
+
+\begin{solution}
+  $$
+  \begin{array}{lccccc}
+    1 & 3 & 6 & 10 & 15 & \cdots \\
+    2 & 5 & 9 & 14 & \cdots & \\
+    4 & 8 & 13 & \cdots & & \\
+    7 & 12 & \cdots & & & \\
+    11 & \ldots & & & & \\
+    \vdots & & & & &
+  \end{array}
+  $$
+
+  $A_{i}$ is the $i^{th}$ row.
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $x \in (A \cap B)^{c}$ means $x \notin A$ or $x \notin B$.
+    This implies, $(A \cap B)^{c} \subseteq A^{c} \cup B^{c}$
+
+  \item
+    $x \in A^{c} \cup B^{c}$ means $x \in A^{c}$ or $x \in B^{c}$.
+    This means, $x \notin A \cap B$, which implies $x \in (A \cap B)^{c}$.
+
+    $(A \cap B)^{c} \supseteq A^{c} \cup B^{c}$
+
+  \item
+    $(A \cap B)^{c} \subseteq A^{c} \cup B^{c}$ and  $(A \cap B)^{c} \supseteq A^{c} \cup B^{c}$.
+    So  $(A \cap B)^{c} = A^{c} \cup B^{c}$
+    
+  }
+
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $\abs{a + b} \leq \abs{a} + \abs{b}$.
+    Squaring, we get,
+    $(a + b)^{2} \leq (\abs{a} + \abs{b})^{2}$
+    $a^{2} + 2ab + b^{2} \leq \abs{a}^{2} + 2\abs{a}\abs{b} + \abs{b}^{2}$
+    $a^{2} + 2ab + b^{2} \leq a^{2} + 2\abs{a}\abs{b} + b^{2}$.
+    For $a,b > 0$ or $a,b < 0$, $ab = \abs{a}\abs{b}$.
+    Therefore,  $a^{2} + 2ab + b^{2} = a^{2} + 2\abs{a}\abs{b} + b^{2}$.
+    So the triangle ineqaulity holds.
+
+  \item
+    The inequality reduces to,
+    $ab \leq \abs{a}\abs{b}$
+    which is true when $ab < 0$ as $\abs{a}\abs{b}$ is always greater than 0.
+    since squaring preserves inequality this implies that $\abs{a+b} \leq \abs{a} + \abs{b}$.
+
+  \item
+    $\abs{a-b} = \abs{a - c + c - b} \leq \abs{a - c} + \abs{c - b}$,
+    $abs{a - c} + \abs{c - b} = \abs{a - c} + \abs{c - d + d - b} \leq \abs{a - c} + \abs{c - d} + \abs{d - b}$.
+
+  \item
+    Then inequality reduces to,
+    $-\abs{a}\abs{b} \leq -ab$ which is true.
+    Alternatively, we can also prove it using the triangle inequality and $a = a - b + b$.
+    We know $\abs{\abs{a} - \abs{b}} = \abs{\abs{b} - \abs{a}}$, so we can assume $\abs{a} > \abs{b}$ without the loss of generality.
+    Then $\abs{\abs{a} - \abs{b}} = \abs{a} - \abs{b} = \abs{(a - b) + b} - \abs{b} \leq \abs{a - b} + \abs{b} - \abs{b} = \abs{a - b}$.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $f(A) = [0, 4]$ and $f(B) = [1, 16]$.
+    In this case,
+    $A \cap B = [1,2]$, $f(A) \cap f(B) = [1,4] = f(A \cap B)$.
+    $A \cup B = [0, 4]$, $f(A) \cup f(B) = [0, 16] = f(A \cup B)$.
+
+  \item
+    For $A = [-b, -a]$ and $B = [a, b]$, $A \cap B = \emptyset$ which implies $f(A \cap B) = \emptyset$.
+    But $f(A) = [a^{2}, b^{2}]$ and $f(B) = [a^{2}, b^{2}]$ with $f(A) \cap f(B) = [a^{2}, b^{2}] \neq \emptyset = f(A \cap B)$.
+
+
+  \item
+    $y \in g(A \cap B)$ means $y = g(x)$ for some $x \in A \cap B$.
+    This implies $x \in A$ and $x \in B$ which means,
+    $y \in g(A)$ and $y \in g(B)$.
+    So, $g(A \cap B) \subseteq g(A) \cap g(B)$.
+
+    The reverse inclusion does not apply when $g$ is not 1-1 function because it is possible to get $y = g(x) = g(x')$ where
+    $x \neq x'$
+
+  \item 
+    \textbf{Conjecture: $g(A \cup B) = g(A) \cup g(B)$}
+    
+    $y \in g(A \cup B)$ means $\exists{x} \in A \cup B$ such that $y = g(x)$.
+    This means, $x \in A$ or $x \in B$, hence $y \in g(A) \cup g(B)$.
+    So, $g(A \cup B) \subseteq g(A) \cup g(B)$.
+
+    Now, $y \in g(A) \cup g(B)$ means  $\exists{x} \in A$ or  $\exists{x'} \in B$ such that
+    $y = g(x) = g(x')$. Regardless of the equality of $x$ and $x'$, $x,x' \in A \cup B$ meaning,
+    $g(A \cup B) \supseteq g(A) \cup g(B)$.
+
+    Hence, $g(A \cup B) = g(A) \cup g(B)$
+  }
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item
+    $f(x) = 2n$
+  \item
+    $f(1) = 1$ and $f(n) = n - 1$
+  \item
+    $f(n) = n / 2$ when $n$ is even and $f(n) = -(n + 1)/2$ when $n$ is even.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $A = [0, 4]$
+    $B = [-1, 1]$
+    $f^{-1}(A) = [-2,2]$
+    $f^{-1}(B) = [-1, 1]$
+
+    $A \cap B = [0, 1]$
+    $f^{-1}(A \cap B) = [-1, 1] = f^{-1}(A) \cap f^{-1}(B)$
+
+    $A \cup B = [-1, 4]$
+    $f^{-1}(A \cup B) = [-2, 2] = f^{-1}(A) \cup f^{-1}(B)$
+
+  \item
+    $x \in g^{-1}(A \cap B)$ means that $g(x) \in A \cap B$.
+    which means $g(x) \in A$ and $g(x) \in B$, this implies
+    $x \in g^{-1}(A)$ and $x \in g^{-1}(B)$.
+    So, $ g^{-1}(A \cap B) \subseteq  g^{-1}(A) \cap  g^{-1}(B)$
+    Now,
+    $x \in g^{-1}(A) \cap  g^{-1}(B)$ means that $x \in g^{-1}(A)$ and $x \in  g^{-1}(B)$.
+    Which is same as $g(x) \in A$ and $g(x) \in B$.
+    Then we get, $g(x) \in A \cap B$ this implies that $x \in g^{-1}(A \cap B)$.
+    Therefore,  $g^{-1}(A) \cap  g^{-1}(B) \subseteq g^{-1}(A \cap B)$.
+
+    Hence, $g^{-1}(A) \cap  g^{-1}(B) = g^{-1}(A \cap B)$.
+
+    Same logic for the union case. Alternatively, we can also use the fact we proved in 1.2.7 (d).
+  }
+\end{solution}
+
+
+\begin{solution}
+  enum{
+  \item
+    The reverse inclusion does not hold for $a = b$.
+  \item
+    Same reason as above.
+  \item
+    $b < b + \epsilon$ for every $\epsilon > 0$, this implies,
+    $a < b + \epsilon$. 
+
+    For backward inclusion, $a < b + \epsilon$ for every $\epsilon > 0$.
+    $b < a$ is not possible because we will reach a contradiction for $\epsilon_{0} = a - b$.
+    So either $a < b$ or $a = b$.
+  }
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item
+    The claim is true.
+    Negation: For all real numbers satisfying $a > b$, $a + 1/n \geq b$ for all $n \in \mathbb{N}$.
+
+  \item
+    The claim is false.
+    Negation: For all real numbers $x > 0$, there exists $n \in \mathbb{N}$ such that $x \geq n$.
+
+  \item
+    The claim is true.
+    Negation: There exists two distinct real numbers $a$ and $b$ such that $a < b$ with $r < a$ and $r > b$ for all $r \in \mathbb{Q}$.
+    
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    For $n = 1$, $y_{1} = 6 > -6$. It is true for the base case.
+    Suppose inductively that $y_{n} > -6$.
+    Now, $y_{n + 1} = (2y_{n} - 6) / 3$ we get,
+    $y_{n + 1} = 2/3 y_{n} - 2$
+    We know, $2/3 y_{n} > -4$, from this we get,
+    $y_{n+1} = 2/3 y_{n} - 2 > -6$.
+
+  \item
+    For $n = 1$, $y_{2} = 2 < 6 = y_{1}$. 
+    Suppose inductively that $y_{n+1} < y_{n}$. Then we get,
+    $2y_{n + 1} < 2y_{n}$,$2y_{n + 1} - 6 < 2y_{n} - 6$, ,$(2y_{n + 1} - 6) / 3 < (2y_{n} - 6) / 3$, $y_{n+2} < y_{n + 1}$.
+  }
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item
+    We know, $(A_{1} \cup A_{2})^{c} = A_{1}^{c} \cap A_{2}^{c}$.
+    So it is true for the base case.
+    Suppose for induction that,
+    $(A_{1} \cup A_{2} \cup \cdots \cup A_{n})^{c} = A_{1}^{c} \cap A_{2}^{c} \cap \cdots A_{n}^{c}$.
+
+    Then,
+    $(A_{1} \cup A_{2} \cup \cdots \cup A_{n+1})^{c} = (A_{1} \cup A_{2} \cup \cdots \cup A_{n} \cup A_{n + 1})^{c}$
+
+    $(A_{1} \cup A_{2} \cup \cdots \cup A_{n} \cup A_{n + 1})^{c} = (\bigcup_{i=1}^{n} A_{i} \cup A_{n+1})^{c}$
+
+    $(\bigcup_{i=1}^{n} A_{i} \cup A_{n+1})^{c} = (\bigcup_{i=1}^{n} A_{i})^{c} \cap A_{n+1}^{c}$
+
+    $(\bigcup_{i=1}^{n} A_{i})^{c} \cap A_{n+1}^{c} = \bigcap_{i=1}^{n} A_{i}^{c} \cap A_{n+1}^{c} = \bigcap_{i=1}^{n + 1} A_{i}^{c}$.
+  \item
+    $B_{n} = \{m \in \mathbb{N} : m \geq n \}$
+  \item
+    $x \in (\bigcup_{i=1}^{n} A_{i})^{c}$ means that $x \notin A_{i}$ so $x \in A_{i}^{c}$ for every $i$.
+    Then, $x \in \bigcap_{i=1}^{n} A_{i}^{c}$
+    So, $(\bigcup_{i=1}^{n} A_{i})^{c} \subseteq \bigcap_{i=1}^{n} A_{i}^{c}$
+
+
+    Now, $x \in \bigcap_{i=1}^{n} A_{i}^{c}$ means that $x \in A_{i}^{c}$ so $x \notin A_{i}$ for every $i$.
+    Then, $x \notin \bigcup_{i=1}^{n} A_{i}$ which implies $x \in (\bigcup_{i=1}^{n} A_{i})^{c}$.
+    So, $(\bigcup_{i=1}^{n} A_{i})^{c} \supseteq \bigcap_{i=1}^{n} A_{i}^{c}$.
+
+
+    Thus, $(\bigcup_{i=1}^{n} A_{i})^{c} = \bigcap_{i=1}^{n} A_{i}^{c}$
+  }
+\end{solution}
+

@@ -1,0 +1,36 @@
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{ntheorem}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+
+
+\title{Understanding Analysis Solutions}
+\author{Bijaya Dangol}
+\date{}
+
+
+% configure ntheorem
+\theoremstyle{break}
+\theorembodyfont{\upshape} % no italics in body font
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem*{solution}{Solution}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proof}{Proof}
+
+% shortcuts
+\newcommand{\enum}[1]{\begin{enumerate}[label=(\alph*)] #1 \end{enumerate}}
+\newcommand{\enumr}[1]{\begin{enumerate}[label=(\roman*)] #1 \end{enumerate}}
+
+\newcommand{\TODO}{\textbf{TODO }}
+\newcommand{\sectionPath}[1]{chapters/chapter\currChapter/chapter\currChapter-#1}
+\newcommand{\heart}{\ensuremath\heartsuit}
+\newcommand{\blank}{\makebox[1cm]{\hrulefill}}
+\newcommand{\blankk}{\blank\space}
+
+% math shortcuts
+\newcommand*\closure[1]{\overline{#1}}
+\newcommand{\abs}[1]{\left|#1\right|}
+
