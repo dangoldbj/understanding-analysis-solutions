@@ -1,5 +1,6 @@
 # Custom
 status.csv
+*.tex~
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
