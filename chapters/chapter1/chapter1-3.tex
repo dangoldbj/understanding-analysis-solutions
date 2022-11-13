@@ -1,0 +1,107 @@
+\section{The Axiom of Completeness}
+
+\begin{solution}
+  \enum{
+  \item
+    For a non-empty set $A$, $i = inf A$ is the infimum of $A$ if and only if
+    \enumr{
+    \item $i \leq a,  \forall a \in A$
+    \item If $b$ is a lower bound of $A$ then $b \leq i$.
+    }
+
+  \item
+    Assume $i \in \mathbb{R}$ is a lower bound for a set $A \subseteq \mathbb{R}$. Then,
+    $i = inf A$ if and only if, for every choice of $\epsilon > 0$ there exists an element $a \in A$ satisfying
+    $i + \epsilon > a$.
+
+
+    \begin{proof}
+      $(\implies)$ Suppose for contradiction that $i + \epsilon \leq a$ for all $\epsilon > 0$.
+      This means that $i + \epsilon$ is a lower bound of $A$.
+      But $i =  infA$ and $i < i + \epsilon$. Contradiction. Thus, $i + \epsilon > a$ for some $a \in A$.
+
+      $(\impliedby)$ We have some $a \in A$ such that $i + \epsilon > a$ for all $\epsilon > 0$.
+      Then we get $\epsilon > a - i$ this implies $a > i$ for every choice of $\epsilon > 0$.
+      So $i$ is a lower bound of $A$.
+      Suppose $b > i$ and $b = inf A$, then for $\epsilon_{0} = b - i > 0$.
+      $i + \epsilon_{0} > a$.
+      $i + b - i > a$
+      $b > a$. Contradiction, since $b = inf A$, $b \leq a \forall a \in A$.
+      So $b \neq inf A$. Thus, $i = inf A$.
+    \end{proof}
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item $B = \{x \}$. $\inf B = x = \sup B$. Thus $\inf B \geq \sup B$.
+  \item Impossible.
+  \item $B = \{x \in \mathbb{Q} \mid 2 < x \leq 4 \}$. $sup B = 4$ and $inf B = 2 \notin B$
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $\sup B$ is a lower bound for $A$.
+    Let $\beta$ be a lower bound of $A$ such that $\beta > \sup B$.
+    Since $\beta$ is a lower bound of $A$ so $\beta \in B$ by the definition of B.
+    This means $\beta \leq \sup B$ by definition of supremum.
+    Contradiction.
+    So such $\beta$ does not exist.
+    Therefore $\sup B = \inf A$.
+  \item For any non-empty set $A$, its infimum is the supremum of the set containing all of its lower bounds.
+    Defining supremum as axiom is enough to derive the existence of infimum.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $\sup (A_{1} \cup A_{2}) = \sup \{ \sup A_{1}, \sup A_{2}\}$.
+    $\sup(\bigcup_{k = 1}^{n} A_{k}) = \sup \{ \sup A_{k} \mid k = 1, 2, \cdots , n \}$
+  \item Not necessarily, because $\bigcup_{k = 1}^{\infty} A_{k}$ can be unbounded.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item Given $c \geq 0$, $a \leq \sup A, \forall a \in A$, then we have $ca \leq c\sup A$.
+    This means $c \sup A$ is an upper bound for the set $cA$.
+    Let $\alpha$ be an upper bound of $cA$ such that $\alpha < c\sup A$.
+    Since $ca \leq \alpha$, this means $a \leq \alpha / c$.
+    This implies, $\alpha / c > \sup A$, we get, $ \alpha > c\sup A$. Contradiction.
+    So $\sup(cA) = c \sup A$
+  \item When $c < 0$, $\inf(cA) = c \sup A$.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $a \leq s$ and $b \leq t$. Adding these two inequalities we get,
+    $a + b \leq s + t$, this means that $s + t$ is an upper bound for $A + B$.
+  \item $a + b \leq u$ then $b \leq u - a$. Now, $\sup B = t \leq u - a$.
+  \item $a \leq u - t$, so $s \leq u - t$, we get, $s + t \leq u$.
+    Thus $\sup(A + B) = s + t$
+  \item Suppose for contradiction that $s + t - u > 0$, then
+    $s - (s + t - u) < a$ we get,
+    $-t + u < a$, $t > u - a$. Contradiction. So $s + t - u$ must be less than or equal to $0$.
+    So, $s + t - u \leq 0$ this implies $s + t \leq u$. Thus, $\sup(A + B) = s + t$.
+  }
+\end{solution}
+
+
+\begin{solution}
+  Since $a$ is an upper bound it must be that $\sup A \leq a$
+  If $\sup A < a$ then it does not work for $a$ because $a \in A$ and $a > \sup A$.
+  Thus, $\sup A = a$.
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item supremum is $1$ and infimum is $0$
+  \item sup is $1$ and inf is $-1$
+  \item 
+  }
+\end{solution}
