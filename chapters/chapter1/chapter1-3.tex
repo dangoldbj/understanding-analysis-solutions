@@ -102,6 +102,59 @@
   \enum{
   \item supremum is $1$ and infimum is $0$
   \item sup is $1$ and inf is $-1$
-  \item 
+  \item inf is $1/4$ and sup is $1/3$
+  \item inf is $0$ and sup is $1$
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    For every $b \in B$, suppose for contradiction that $b < \sup A$.
+    Then, this means $\sup A < \sup B$ is an upper bound for $B$. Contradiction.
+    So $\exists b \in B$ such that $b > a, \forall a \in A$.
+  \item $A = \{x \mid x \leq 1\}$, $B = \{ x \mid x < 1 \}$.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    The definition readily implies that $\sup A \leq \inf B$. Now suppose for contradiction that $\exists x \in \mathbb{R}$ such that
+    $\sup A < x < \inf B$. Then this means $x \notin A \cup B$. So, $A \cup B \neq \mathbb{R}$. Contradiction. So such a $x$ does not exist.
+    This means $\sup A = \inf B$
+    Now let $c = sup A$ then $\forall x \in A$, $x \leq c$ and $\forall x \in B$, $x \geq c$.
+    
+  \item Let $B = \{ b \mid b > x, \forall x \in E\}$.
+    $B$ is not empty because $E$ is bounded above so there exists atleast one $b \in B$.
+    Since $E$ is only bounded above $E \subset \mathbb{R}$ and $B = E^{c} \subset \mathbb{R}$.
+    Thus $E \cup B = \mathbb{R}$
+    By the cut property $\exists c$ such that $c \geq x, \forall x \in E$  and $c \leq x, \forall x \in B$.
+    This means,
+    \enumr{
+    \item $c$ is an upper bound of A
+    \item $c \leq b$ means $c$ is the least upper bound.
+    }
+
+    $c = \sup E$. This proves existence of $\sup E$.
+    
+  \item $A = \{ x \mid x^{2} < 2\} \cup [-\infty, 0]$ and $B = \{x \mid x^{2} > 2 \} - [-\infty, 0]$.
+    $A \cup B = \mathbb{Q}$ but $\nexists c \in \mathbb{Q}$ such that $x \leq c, \forall x \in A$ and $c \leq x, \forall x \in B$.
+  }
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item
+    True.
+    Suppose for contradiction $\sup A > \sup B$, then $\forall b \in B, b \leq \sup B$.
+    Also since $A \subseteq B$ then $\forall a \in A, a \leq \sup B$ with $\sup A > \sup B$. Contradiction.
+    Thus $\sup A \leq \sup B$.
+  \item True.
+    $c = (\sup A + \inf B) / 2$.
+  \item False
+    $A = \{x \mid x < 1\}$ and $B = \{x \mid x > 1\}$.
+    Then, $\sup A = 1 = \inf B$.
   }
 \end{solution}
