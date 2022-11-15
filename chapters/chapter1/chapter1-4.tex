@@ -1,0 +1,102 @@
+\section{Consequences of Completeness}
+
+\begin{solution}
+  \enum{  
+  \item 
+    $a = m/n$ and $b = r/s$ where $m, n, r, s \in \mathbb{Z}$.
+    Now, $a + b = m/n + r/s = (ms + rn) / ns$.
+    $ms + rn \in \mathbb{Z}$ and $ns \in \mathbb{Z}$ since $\mathbb{Z}$ is closed under addition and multiplication.
+    Thus $(ms + rn) / ns \in \mathbb{Q}$ by definition of $\mathbb{Q}$.
+    
+  \item
+    Suppose for contradiction, $\exists p \in \mathbb{Q} \mid p = a + t$.
+    Then, we get $t = p + (-a)$, since $p, a \in \mathbb{Q}$ this implies $t \in \mathbb{Q}$.
+    Thus $p \notin \mathbb{Q}$. Thus $p \in \mathbf{I}$.
+  
+  \item
+    $\mathbf{I}$ is not closed under addition but not closed under multiplication.
+    Consider $1 - \sqrt{2}$ and $\sqrt{2}$ for addition.
+    $\sqrt{2}$ and $\sqrt{2}$ for multiplication.
+  }
+\end{solution}
+
+
+\begin{solution}
+  Suppose $s < \sup A$ then choose $n$ such that $1/n < \sup A - s$.
+  We get $s + 1/n < \sup A$, since $s + 1/n$ is an upper bound, this contradicts $\sup A$ being the least upper bound.
+
+  Suppose $s > \sup A$ then choose $n$ such that $1/n  > s - \sup A$.
+  We get, $s - 1/n > \sup A$, this implies $s - 1/n$ is an upper bound. Contradiction.
+
+  Thus $s = \sup A$.
+\end{solution}
+
+\begin{solution}
+  Suppose $\exists x \mid x \in \bigcap_{n = 1}^{\infty} (0, 1/n)$ then,
+  this implies $0 < x < 1/n$ which means $n < 1/x$ where $x > 0$. Contradiction (archimedean property).
+
+  Thus $\bigcap_{n = 1}^{\infty} (0, 1/n) = \emptyset$
+\end{solution}
+
+\begin{solution}
+  $t \leq b, \forall t \in T$.
+  If $a < b' < b$. $b'$ can not be upperbound since $\exists r$ such that $b' < r < b$.
+  So $\sup T = b$
+\end{solution}
+
+\begin{solution}
+  $\exists r \in \mathbb{Q} \mid a - \sqrt{2} < r < b - \sqrt{2}$ then we get
+  $a < r + \sqrt{2} < b$ where $r + \sqrt{2} \in \mathbf{I}$.
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item Not dense. The gap can not be made smaller than $1/10$.
+  \item Dense
+  \item Not dense. The gap can not be made smaller than $1/10$.
+  }
+\end{solution}
+
+
+\begin{solution}
+
+  Choose $n_{0}$ such that $-1/n_{0} > -(\alpha^{2} - 2) / 2\alpha$.
+  Then, $(\alpha - 1/n_{0})^{2}) > \alpha^{2} + -(\alpha^{2} - 2)$ we get,
+  $2 < (\alpha - 1/n_{0})^{2} < \alpha^{2}$. Contradiction, since $\alpha^{2}$ is the least upper bound.
+
+  Thus $\alpha^{2} = 2$.
+\end{solution}
+
+\begin{solution}
+  NOTE: The solution of this excercise has been copied from https://github.com/UlisseMini/understanding-analysis-solutions/
+  \enum{
+  \item $A = \mathbb{Q} \cap (0, 1)$, $B = \mathbb{Q} \cap (0, 1)$.
+    $A \cap B = \emptyset$ and $\sup A = \sup B = 1$ with $\sup A \notin A, \sup B \notin B$
+    
+  \item
+    Personal Note: At first I thought it was not possible. However, after going through UlisseMini's solution,
+    I realized my mistake. Here is the solution.
+
+    Defining $$
+    J_{i} = (a_{i}, b_{i}), A = \{a_{n}: n \in \mathbb{N}\}, B = \{b_{n} : n \in \mathbb{N}\},
+    \bigcap_{n=1}^{\infty} J_{n}
+    $$ will atleast contain $(\sup A, \sup B)$. Thus, a necessary condition to meet the request is $\sup A = \inf B$.
+
+
+    $J_{n} = (-1/n, 1/n)$ satisfies this condition $\sup A = \inf B = 0$ and by inspection,
+    $\bigcap_{n=1}^{\infty} J_{n} = \{0\}$
+  \item $L_{i}=\{a \in R \mid a \geq i\}$
+  \item
+    Impossible. Let $J_{n} = \bigcap_{k=1}^{n} I_{k}$.
+    \enumr{
+    \item Since $\bigcap_{n = 1}^{N} I_{n} \neq \emptyset$ we have $J_{n} \neq \emptyset$.
+    \item $J_{n}$ being intersection of closed intervals makes it a closed interval.
+    \item $J_{n + 1} \subseteq J_{n}$ since $I_{n+1} \cap J_{n} \subseteq J_{n}$
+    \item $\bigcap_{n=1}^{\infty} J_{n} = \bigcap_{n = 1}^{\infty}(\bigcap_{k=1}^{n} I_{k}) = \bigcap_{n=1}^{\infty} I_{n}$
+    }
+
+    By (i), (ii), and (iii) and the Nested Interval Property tells us that $\bigcap_{n=1}^{\infty} J_{n} \neq \emptyset$
+    and by (iv) $\bigcap_{n=1}^{\infty}I_{n} \neq \emptyset$
+  }
+\end{solution}
+
