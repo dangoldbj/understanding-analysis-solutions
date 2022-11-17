@@ -1,0 +1,243 @@
+\section{Cardinality}
+
+\begin{solution}
+  $g(i) = f(n_{i})$ where $n_{i} = \min\{n \in \mathbb{N} - [n_{1}, n_{i - 1}] : f(n_{i}) \in A\}$.
+  $g: \mathbb{N} \rightarrow A$ is 1-1 and onto. Thus $A$ is countable. 
+\end{solution}
+
+\begin{solution}
+
+  The flaw is that the nested interval theorem only applies to set that has the least upper bound property.
+  $\mathbb{Q}$ does not have this property.
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    $B_{2} \subseteq A_{2}$ thus $B_{2}$ is countable.
+    Define,
+    $g(1) = f_{1}(1)$
+    $g(k) = f_{1}(k - 1) if k is odd$
+    $g(k) = f_{2}(k - 1) if k is even$
+
+    $g$ is 1-1 and onto. Thus, $A_{1} \cup B_{2}$ is countable.
+
+
+    Suppose for induction it is true for $n$.
+    Now $A_{1} \cup \cdots \cup B_{n} \cup B_{n + 1}$ is union of countable sets, which by induction hypothesis is countable.
+    
+  \item
+    Induction does not apply for the infinite case. It only applies for $n^{th}$ case.
+    
+  \item
+    The rearrangement of $\mathbb{N}$ gives us the disjoint sets $C_{n}$ such that $\bigcup_{n = 1}^{\infty}C_{n}=\mathbb{N}$.
+
+    Let $B_{n}$ be disjoint sets constructed as $B_{1} = A_{1}, B_{2} = A_{1} \ B_{1}, \ldots$
+
+    we want to do something like:
+
+    $$f(\mathbf{N}) = f\left(\bigcup_{n=1}^\infty C_n\right) = \bigcup_{n=1}^\infty f_n(C_n) = \bigcup_{n=1}^\infty B_n = \bigcup_{n=1}^\infty A_n$$
+    $\exists$ bijection $f_{n}: C_{n} \to B_{n}$ because $B_{n}$ is countable.
+     $f : \mathbb{N} \to \bigcup_{n=1}^\infty B_n$ as
+
+     $$
+     f(n) = \begin{cases}
+              f_{1}(n) &\text{if } n \in C_{1} \\
+              f_{2}(n) &\text{if } n \in C_{2} \\
+              \vdots
+            \end{cases}
+     $$
+
+     \enumr{
+     \item Since each $C_{n}$ is disjoint and each $f_{n}$ is 1-1,
+       $f(n_{1}) = f(n_{2})$ implies $n_{1} = n_{2}$ meaning $f$ is 1-1.
+       
+     \item Since any $b \in \bigcup_{n=1}^{\infty} B_{n}$ has $b \in B_{n}$ for some $n$, we know $b = f_{n}(x)$ has a solution since $f_{n}$ is onto.
+       Letting $x = f_{n}^{-1}(b)$ we have $f(x) = f_{n}(x) = b$ since $f_{n}^{-1}(b) \in C$ meaning $f$ is onto.
+     }
+
+     By (i) and (ii) $f$ is bijective and so $\bigcup_{n=1}^{\infty} B_{n}$ is countanble.  And since
+      $$\bigcup_{n=1}^\infty B_n = \bigcup_{n=1}^\infty A_n$$
+      We have that $\bigcup_{n=1}^\infty A_n$ is countable, completing the proof.
+   }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item We will start by finding $f : (-1, 1) \to \mathbf{R}$ and then transform it to $(a, b)$. Example 1.5.4 gives a suitable $f$
+    $$
+    f(x) = \frac{x}{x^2 - 1}
+    $$
+    The book says to use calculus to show $f$ is bijective, first we will examine the derivative
+    $$
+    f'(x) = \frac{x^2 - 1 - 2x^2}{(x^2 - 1)^2} = - \frac{x^2 + 1}{(x^2 - 1)^2}
+    $$
+    The denominator and numerator are positive, so $f'(x) < 0$ for all $x \in (0,1)$.
+    This means no two inputs will be mapped to the same output, meaning $f$ is one to one (a rigorous proof is beyond our current ability)
+
+    To show that $f$ is onto, we examine the limits
+    $$
+    \begin{aligned}
+      \lim_{x \to 1^{-}} \frac{x}{x^2 - 1} &= - \infty \\
+      \lim_{x \to {-1}^{+}} \frac{x}{x^2 - 1} &= + \infty
+    \end{aligned}
+    $$
+    Then use the intermediate value theorem to conclude $f$ is onto.
+
+    Now we shift $f$ to the interval $(a, b)$
+    $$
+    g(x) = f\left(\frac{2x - 1}{b - a} - a\right)
+    $$
+    Proving $g(x)$ is also bijective is a straightforward application of the chain rule.
+  \item We want a bijective $h(x)$ such that $h(x) : (a, \infty) \to (-1, 1)$ because then we could compose them to get a new bijective function $f(h(x)) : (a, \infty) \to \mathbf{R}$.
+
+    Let
+    $$
+    h(x) = \frac{2}{x - a + 1} - 1
+    $$
+    We have $h : (a, \infty) \to (1, -1)$ since $h(a) = 1$ and $\lim_{x \to \infty} h(x) = 1$.
+
+    Meaning that $f(h(x)) : (a, \infty) \to \mathbf{R}$ is our bijective map.
+  \item With countable sets adding a single element doesn't change cardinality since we can just shift by one to get a bijective map. we'll use a similar technique here to essentially outrun our problems. Define $f : [0,1) \to (0,1)$ as
+    $$
+    f(x) = \begin{cases}
+      1/2 &\text{if } {x=0} \\
+      1/4 &\text{if } {x=1/2} \\
+      1/8 &\text{if } {x=1/4} \\
+      \vdots \\
+      x &\text{otherwise}
+    \end{cases}
+    $$
+    Now we prove $f$ is bijective by showing $y = f(x)$ has exactly one solution for all $y \in (0,1)$.
+
+    If $y = 1/2^n$ then the only solution is $y = f(1/2^{n-1})$ (or $x=0$ in the special case $n=1$),
+    If $y \ne 1/2^n$ then the only solution is $y = f(y)$.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item Because there is 1-1 and onto mapping from $A$ to $A$. Simply, $f(x) = x$
+    
+  \item If $A ~ B$ then, $f: A \to B$ is 1-1 and onto, so define, $g: B \to A$ as $g = f^{-1}$, $g$ is also 1-1 and onto.
+    
+  \item If $A ~ B$ then, $f: A \to B$ is bijection, and $B ~ C$ then $g: B \to C$ is a bijection.
+    Thus $h: A \to C$ with $h = g(f(a))$ is a bijection. Hence $A ~ C$
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item $A_{n} = (n, n + 1), n \in \mathbb{N}$.
+    
+  \item
+    No such collection exists.
+    If the intervals contain two irrational numbers, $\alpha, \beta$ then there exists an irrational number in between.
+    So the intervals are not disjoint.
+
+    
+    If the interval $I$ is defined as $(\alpha, \beta)$ where beta is the smallest irrational number greater than $\alpha$.
+    Then, $I \subseteq \mathbb{Q}$ thus $I$ is countable.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item $f(x) = 2x$.
+  \item
+    Let $g: S \to (0, 1)$ be a function that interleaves decimals in the representation without trialing nines, padding with zeros if necessary.
+    $g(0.32, 0.45) = 0.3245, g(0.1\bar 9, 0.2) = g(0.2, 0.2) = (0.22), g(0.1, 0.23)=g(0.1203), g(0.1, 0.\bar 2) = 0.12\bar 02$ etc.
+
+    Every real number can be written with two digits representations, one with trailing 9's and one without.
+    $g(x, y) = 0.d_{1}d_{2}\ldots\bar 9$ is impossible since it would imply
+    $x = 0.d_{1}\ldots\bar 9$ and $y = 0.d_{1}\ldots\bar 9$ but the definition of $g$ does not allow this,
+    therefore $g(s)$ is unique and so $g$ is 1-1.
+
+    Is $g$ onto? No since $g(x,y) = 0.1$ has no solutions, since we would want $x = 0.1$ and $y = 0$ but $0 \notin (0, 1)$.
+  }
+\end{solution}
+
+\begin{solution}
+   Notice $B \cap (a, 2)$ is finite for all $a > 0$, since if it was infinite we could make a set with sum greater then two.
+  And since $B$ is the countable union of finite sets $\bigcup_{n=1}^\infty B \cap (1/n, 2)$, $B$ must be countable or finite.
+\end{solution}
+
+
+\begin{solution}
+  \enum{
+  \item $x^{2} = 2$, $x^{3} = 2$, $x^{4} - 10x^{2} + 1 = 0$
+    
+  \item Basically, $A ~ \mathbb{Z}^{n} ~ \mathbb{N}^{n} ~ \mathbb{N}$
+    
+  \item $A = \bigcup_{n = 1}^{\infty} A_{n}$ is countable because $A_{n}$ is countable.
+    
+  \item Since $\mathbb{R} = A \cup T$ where $T$ is the set of transcendental numbers. Since $\mathbb{R}$ is uncountable and $A$ is countable, it must be that $T$ is uncountable.
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item
+    Suppose $C \cap [a, 1]$ is countable $\forall a \in (0, 1)$.
+    Then,
+
+    $$
+    \bigcup_{n = 1}^{\infty} C \cap [1/n , 1] = C \cap [0, 1] = C
+    $$
+
+    This implies that $C$ is countable. Contradiction.
+    
+  \item
+    For $epsilon > 0$, $C \cap [\alpha + \epsilon, 1]$ is countable, otherwise it will be in $A$ contradicting $\alpha = \sup A$.
+
+    Now,
+    $$
+    \bigcup_{n = 1}^{\infty} C \cap [\alpha + 1/n , 1] = C \cap [\alpha, 1]
+    $$
+    Thus $ C \cap [\alpha, 1]$ being union of countable sets is countable.
+    
+  \item No, consider the set $C = \{ 1/n : n \in \mathbb{N}\}$ it has $C \cap [a, 1]$ finite for every $a$ but
+    $C \cap [0, 1]$ is infinite.
+    
+  }
+\end{solution}
+
+\begin{solution}
+  \enum{
+  \item $$ h(x) = \begin{cases}
+             f(x) & \text{if} {x \in A} \\
+             g^{-1}(x) & \text{if} {x \in A'}
+           \end{cases}           
+           $$
+
+      
+           
+         \item
+           If $A_{1} = \emptyset$ then $g$ is already a bijection.
+           Assume $A_{1} \neq \emptyset$. Then,
+           $A_{2} = g(f(A_{1}))$, which is by definition of $A_{1}$ disjoint.
+
+           Suppose inductively that $A_{1} \cap A_{n} = \emptyset$.
+           Then, $A_{1} \cap A_{n + 1} = A_{1} \cap g(f(A_{n}))$
+
+           $f^{-1}(g^{-1}(A_{1})) \cap A_{n} = \emptyset$.
+
+           Now, for every $j > k$, $A_{j} \cap A_{k} = \emptyset$.
+
+           $A_{j} \cap A_{k} = h(A_{j}) \cap h(A_{k})$
+           we get,
+           $h^{k}(A_{j -k}) \cap h^{k}(A_{1}) = h^{k}(A_{j - k} \cap A_{1})$
+           which is,
+           $h^{k}(\emptyset) = \emptyset$.
+
+           Since $f$ is 1-1.
+           $f(A_{j}) \cap f(A_{k}) = f(A_{j} \cap A_{k}) = f(\emptyset) = \emptyset$
+         \item
+           $f(\bigcup_{n=1}^{\infty}A_{n} = \bigcup_{n=1}^{\infty}f(A_{n})$
+           
+         \item
+           Now every $x \notin A$ implies $x \in g(Y)$ thus $x \in A'$.
+           If $y \in B \mid g(y) = x \in A'$, then this implies $y = g(f(A_{n}))$ for some $n$ and hence $x \in A_{n + 1} \subseteq A$. Contradiction.
+           Thus $y \in B'$.
+  }
+\end{solution}
